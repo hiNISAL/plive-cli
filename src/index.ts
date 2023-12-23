@@ -72,13 +72,15 @@ const create = async (projectName: string) => {
     'readme.md',
     'vite.config.ts',
   ].forEach((filename) => {
-    const filepath = path.resolve(projectPath, filename);
+    try {
+      const filepath = path.resolve(projectPath, filename);
 
-    let file = fs.readFileSync(filepath, 'utf-8');
+      let file = fs.readFileSync(filepath, 'utf-8');
 
-    file = file.replace(/plive/igm, projectName);
+      file = file.replace(/plive/igm, projectName);
 
-    fs.writeFileSync(filepath, file);
+      fs.writeFileSync(filepath, file);
+    } catch {}
   });
 
   console.log('Installing dependencies...');
