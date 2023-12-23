@@ -30,7 +30,7 @@ const create = async (projectName: string) => {
         type: 'list',
         name: 'type',
         message: 'Type of project',
-        choices: ['browser', 'node'],
+        choices: ['browser', 'node', 'bun'],
       },
     ]);
 
