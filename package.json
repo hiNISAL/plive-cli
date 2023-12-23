@@ -1,0 +1,41 @@
+{
+  "name": "plive-cli",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "main": "dist/plive.js",
+  "files": [
+    "dist"
+  ],
+  "author": "ARam",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run vite-build && npm run swc-build",
+    "vite-build": "vite build",
+    "swc-build": "swc ./dist/index.js -o ./dist/index.js"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.63",
+    "@swc/core": "^1.3.101",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.10.5",
+    "@types/yargs": "^17.0.32",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10"
+  },
+  "bin": {
+    "plive": "./bin/plive.js"
+  },
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "yargs": "^17.1.1-candidate.0"
+  }
+}
